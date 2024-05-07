@@ -26,4 +26,6 @@ body {
     justify-content: center;
     align-items: center;
     color: #242424;
+    border-color: goldenrod;
+    border-style: solid;
 }

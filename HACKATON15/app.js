@@ -123,3 +123,158 @@ const charIndex = (palabra, caracter) => {
 console.log(charIndex("hello", "l"));
 console.log(charIndex("circumlocution", "c"));
 console.log(charIndex("hello", "x"));
+
+//pregunta 10
+function toArray(obj) {
+  return Object.entries(obj);
+}
+
+console.log(toArray({ a: 1, b: 2 }));
+console.log(toArray({ key: "value", name: "John" }));
+
+//pregunta 11
+function getBudgets(arr) {
+  return arr.reduce((total, person) => total + person.budget, 0);
+}
+
+const people = [
+  { name: "John", age: 21, budget: 23000 },
+  { name: "Steve", age: 32, budget: 40000 },
+  { name: "Martin", age: 16, budget: 2700 },
+];
+
+console.log(getBudgets(people));
+
+//PREGUNTA 12
+function getStudentNames(students) {
+  return students.map((student) => student.name);
+}
+
+const studentArray = [{ name: "Steve" }, { name: "Mike" }, { name: "John" }];
+
+console.log(getStudentNames(studentArray));
+
+//pregunta 13
+function objectToArray(obj) {
+  return Object.entries(obj);
+}
+
+const exampleObject = {
+  likes: 2,
+  dislikes: 3,
+  followers: 10,
+};
+
+console.log(objectToArray(exampleObject));
+
+//pregunta 14
+function squaresSum(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i * i;
+  }
+  return sum;
+}
+
+console.log(squaresSum(3));
+console.log(squaresSum(4));
+console.log(squaresSum(5));
+
+//pregunta 15
+function multiplyByLength(arr) {
+  const length = arr.length;
+  return arr.map((element) => element * length);
+}
+
+console.log(multiplyByLength([2, 3, 1, 0]));
+console.log(multiplyByLength([1, 2, 3]));
+console.log(multiplyByLength([5, 10, 15]));
+
+//pregunta 16
+function countdown(n) {
+  const result = [];
+  for (let i = n; i >= 0; i--) {
+    result.push(i);
+  }
+  return result;
+}
+
+console.log(countdown(5));
+console.log(countdown(3));
+console.log(countdown(0));
+
+//pregunta 17
+function diffMaxMin(arr) {
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  return max - min;
+}
+
+console.log(diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]));
+console.log(diffMaxMin([1, 2, 3, 4, 5]));
+console.log(diffMaxMin([100, 200, 300]));
+
+//pregunta 18
+function filterList(arr) {
+  return arr.filter(
+    (item) => typeof item === "number" && Number.isInteger(item)
+  );
+}
+
+console.log(filterList([1, 2, 3, "x", "y", 10]));
+console.log(filterList([1, "2", 3, "hello", 10]));
+console.log(filterList(["a", "b", "c"]));
+
+//pregunta 19
+function repeat(element, times) {
+  return Array.from({ length: times }, () => element);
+}
+
+console.log(repeat(13, 5));
+console.log(repeat("a", 3));
+console.log(repeat(true, 4));
+
+//pregunta 20
+String.prototype.vreplace = function (vowel) {
+  return this.replace(/[aeiouAEIOU]/g, vowel);
+};
+
+console.log("apples and bananas".vreplace("u"));
+console.log("Hello World".vreplace("o"));
+console.log("I love programming".vreplace("e"));
+
+//pregunta 21
+function findNemo(sentence) {
+  const words = sentence.split(" ");
+  const index = words.indexOf("Nemo");
+
+  if (index !== -1) {
+    return `I found Nemo at ${index + 1}!`;
+  } else {
+    return "Nemo not found!";
+  }
+}
+
+console.log(findNemo("I am finding Nemo !"));
+console.log(findNemo("Where is Nemo?"));
+console.log(findNemo("Nemo is hiding"));
+
+//pregunta 22
+function capLast(sentence) {
+  const words = sentence.split(" ");
+
+  const capitalizedWords = words.map((word) => {
+    if (word.length > 0) {
+      const lastLetter = word[word.length - 1].toUpperCase();
+
+      return word.slice(0, -1) + lastLetter;
+    }
+    return word;
+  });
+
+  return capitalizedWords.join(" ");
+}
+
+console.log(capLast("hello"));
+console.log(capLast("hello world"));
+console.log(capLast("capitalize the last letter of every word"));
